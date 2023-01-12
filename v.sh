@@ -18,7 +18,6 @@ http://www.xiaoshuosk.com/
 http://www.55shuba.com/
 http://www.bequgexs.com/
 http://www.biqu6.com/
-
 )
 
 CONFIG_FILE="/etc/v2ray/config.json"
@@ -1899,5 +1898,3 @@ case "$action" in
         echo " 用法: `basename $0` [menu|update|uninstall|start|restart|stop|showInfo|showLog]"
         ;;
 esac
-
-
