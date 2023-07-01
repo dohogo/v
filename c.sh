@@ -170,7 +170,7 @@ getVersion() {
     TAG_URL="${V6_PROXY}https://api.github.com/repos/v2fly/v2ray-core/releases/latest"
     NEW_VER="$(normalizeVersion "$(curl -s "${TAG_URL}" --connect-timeout 10| tr ',' '\n' | grep 'tag_name' | cut -d\" -f4)")"
     if [[ "$XTLS" = "true" ]]; then
-        NEW_VER=v4.45.0
+        NEW_VER=v5.7.0
     fi
 
     if [[ $? -ne 0 ]] || [[ $NEW_VER == "" ]]; then
@@ -532,7 +532,7 @@ getCert() {
             systemctl start cron
             systemctl enable cron
         fi
-        curl -sL -k https://get.acme.sh | sh -s email=do.ho@hotmail.com
+        curl -sL https://get.acme.sh | sh -s email=do.ho@hotmail.com
         source ~/.bashrc
         ~/.acme.sh/acme.sh  --upgrade  --auto-upgrade
         ~/.acme.sh/acme.sh --set-default-ca --server letsencrypt
